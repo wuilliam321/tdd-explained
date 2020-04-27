@@ -1,6 +1,6 @@
 module.exports = {
     verbose: true,
     transform: {
-        '^.+\\.js?$': 'babel-jest',
-    },
+        "\\.js$": ['babel-jest', {rootMode: "upward"}]
+    }
 };

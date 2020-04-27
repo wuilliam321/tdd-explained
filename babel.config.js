@@ -9,9 +9,4 @@ module.exports = {
             },
         ],
     ],
-    ignore: [
-        '**/__tests__',
-        '**/*.spec.js',
-        '**/*.test.js',
-    ]
 };

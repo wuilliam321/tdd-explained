@@ -6,7 +6,7 @@
   "author": "Wuilliam Lacruz <wuilliam.lacruz@pedidosya.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel ./src/*.js -o dist/bundle.js",
+    "build": "babel ./src/*.js --ignore '**/*.test.js' --ignore '**/*.spec.js' --ignore '**/__tests__' -o dist/bundle.js",
     "test": "jest"
   },
   "devDependencies": {
