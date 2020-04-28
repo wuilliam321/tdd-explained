@@ -1,9 +1,10 @@
 import { convert } from './romans';
 
 const conversions = [
+    [4, 'IV'],
     [3, 'III'],
     [2, 'II'],
-    [1, 'I']
+    [1, 'I'],
 ];
 describe('convert arabic to romans', () => {
     conversions.map(([arabic, roman]) => {
