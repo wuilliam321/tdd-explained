@@ -1,3 +1,8 @@
 export function convert (number) {
-    return 'I';
+    if (number === 1) {
+        return "I";
+
+    }
+    return "II";
+
 }

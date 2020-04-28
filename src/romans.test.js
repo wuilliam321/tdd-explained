@@ -1,4 +1,4 @@
-import { convert } from "./romans";
+import { convert } from './romans';
 
 describe('convert arabic to romans', () => {
     it('convert 1 to I', () => {
@@ -16,4 +16,4 @@ describe('convert arabic to romans', () => {
 
         expect(result).toBe('II');
     });
-})
+});
