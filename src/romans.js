@@ -1,5 +1,6 @@
 const conversions = [
-    [1, 'I']
+    [4, 'IV'],
+    [1, 'I'],
 ];
 export function convert (number) {
     if (number <= 0) {
