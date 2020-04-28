@@ -2,11 +2,12 @@ const conversions = [
     [1, 'I']
 ];
 export function convert (number) {
-    if (number === 1) {
-        return "I";
+    let roman;
+    let arabic;
+    const conversion = conversions.find(([x]) => x <= number);
+    if (conversion) {
+        [arabic, roman] = conversion;
+        roman += convert(number - arabic);
     }
-    if (number === 2) {
-        return "II";
-    }
-    return 'III';
+    return roman;
 }
