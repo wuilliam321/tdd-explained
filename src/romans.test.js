@@ -1,6 +1,7 @@
 import { convert } from './romans';
 
 const conversions = [
+    [9, 'IX'],
     [5, 'V'],
     [4, 'IV'],
     [3, 'III'],
