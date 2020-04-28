@@ -37,6 +37,10 @@ const invalidValues = [
     [5001, 'arabic should be <= 5000'],
     [undefined, 'number is required'],
     [null, 'number is required'],
+    [{}, 'number is required'],
+    [() => ({}), 'number is required'],
+    ['A bad param', 'number is required'],
+    ['999', 'number is required'],
 ];
 describe('convert out of limits', () => {
     // Roman domain: arabic > 0 AND N <= 5000
@@ -46,9 +50,9 @@ describe('convert out of limits', () => {
             const param = invalid;
             const error = new Error(msg);
 
-            expect(() => {
-                convert(param);
-            }).toThrow(error);
+            const runner = () => convert(param);
+
+            expect(runner).toThrow(error);
         });
     });
 });

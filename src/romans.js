@@ -15,7 +15,10 @@ const conversions = [
     [1, 'I'],
 ];
 export function convert (number) {
-    if (number === undefined || number === null) {
+    if (number === undefined ||
+        number === null ||
+        typeof (number) !== "number" ||
+        Number.isNaN(Number(number))) {
         throw new Error('number is required');
     }
     if (number <= 0) {
