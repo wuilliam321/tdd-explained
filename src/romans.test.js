@@ -32,32 +32,23 @@ describe('convert arabic to romans', () => {
         });
     });
 });
+
+const invalidValues = [
+    [5001, 'arabic should be <= 5000'],
+    [undefined, 'number is required'],
+    [null, 'number is required'],
+];
 describe('convert out of limits', () => {
     // Roman domain: arabic > 0 AND N <= 5000
     // Limits: <= 0, > 5000
+    invalidValues.map(([invalid, msg]) => {
+        it(`convert with '${invalid}' value`, () => {
+            const param = invalid;
+            const error = new Error(msg);
 
-    it(`convert with invalid values`, () => {
-        const arabic = 50001;
-        const error = new Error('arabic should be <= 5000');
-
-        expect(() => {
-            convert(arabic);
-        }).toThrow(error);
-    });
-
-    it(`convert with no param`, () => {
-        const error = new Error('number is required');
-
-        expect(() => {
-            convert();
-        }).toThrow(error);
-    });
-
-    it(`convert with null param`, () => {
-        const error = new Error('number is required');
-
-        expect(() => {
-            convert(null);
-        }).toThrow(error);
+            expect(() => {
+                convert(param);
+            }).toThrow(error);
+        });
     });
 });
