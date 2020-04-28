@@ -52,4 +52,12 @@ describe('convert out of limits', () => {
             convert();
         }).toThrow(error);
     });
+
+    it(`convert with null param`, () => {
+        const error = new Error('number is required');
+
+        expect(() => {
+            convert(null);
+        }).toThrow(error);
+    });
 });
