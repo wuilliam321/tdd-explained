@@ -16,4 +16,12 @@ describe('convert arabic to romans', () => {
 
         expect(result).toBe('II');
     });
+
+    it('convert 3 to III', () => {
+        const arabic = 3;
+
+        const result = convert(arabic);
+
+        expect(result).toBe('III');
+    });
 });
