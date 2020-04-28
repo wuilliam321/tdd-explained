@@ -2,6 +2,9 @@ const conversions = [
     [1, 'I']
 ];
 export function convert (number) {
+    if (number <= 0) {
+        return '';
+    }
     let roman;
     let arabic;
     const conversion = conversions.find(([x]) => x <= number);
