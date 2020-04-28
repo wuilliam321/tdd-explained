@@ -37,8 +37,8 @@ describe('convert out of limits', () => {
     // Limits: <= 0, > 5000
 
     it(`convert with invalid values`, () => {
-        const arabic = 0;
-        const error = new Error('arabic should be >0');
+        const arabic = 50001;
+        const error = new Error('arabic should be <= 5000');
 
         expect(() => {
             convert(arabic);

@@ -18,6 +18,9 @@ export function convert (number) {
     if (number <= 0) {
         return '';
     }
+    if (number > 5000) {
+        throw new Error('arabic should be <= 5000');
+    }
     let roman;
     let arabic;
     const conversion = conversions.find(([x]) => x <= number);
