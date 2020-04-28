@@ -15,7 +15,7 @@ const conversions = [
     [1, 'I'],
 ];
 export function convert (number) {
-    if (number === undefined) {
+    if (number === undefined || number === null) {
         throw new Error('number is required');
     }
     if (number <= 0) {
