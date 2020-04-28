@@ -44,4 +44,12 @@ describe('convert out of limits', () => {
             convert(arabic);
         }).toThrow(error);
     });
+
+    it(`convert with no param`, () => {
+        const error = new Error('number is required');
+
+        expect(() => {
+            convert();
+        }).toThrow(error);
+    });
 });
