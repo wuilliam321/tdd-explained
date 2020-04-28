@@ -14,22 +14,32 @@ const conversions = [
     [4, 'IV'],
     [1, 'I'],
 ];
-export function convert (number) {
+
+function validateNumber (number) {
     if (number === undefined ||
         number === null ||
         typeof (number) !== "number" ||
         Number.isNaN(Number(number))) {
         throw new Error('number is required');
     }
-    if (number <= 0) {
-        return '';
-    }
     if (number > 5000) {
         throw new Error('arabic should be <= 5000');
     }
-    let roman;
-    let arabic;
-    const conversion = conversions.find(([x]) => x <= number);
+}
+
+
+function findBestConversion (number) {
+    return conversions.find(([arabic]) => arabic <= number);
+}
+
+export function convert (number) {
+    validateNumber(number);
+
+    if (number <= 0) {
+        return '';
+    }
+    let roman, arabic;
+    const conversion = findBestConversion(number);
     if (conversion) {
         [arabic, roman] = conversion;
         roman += convert(number - arabic);
