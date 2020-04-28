@@ -32,3 +32,16 @@ describe('convert arabic to romans', () => {
         });
     });
 });
+describe('convert out of limits', () => {
+    // Roman domain: arabic > 0 AND N <= 5000
+    // Limits: <= 0, > 5000
+
+    it(`convert with invalid values`, () => {
+        const arabic = 0;
+        const error = new Error('arabic should be >0');
+
+        expect(() => {
+            convert(arabic);
+        }).toThrow(error);
+    });
+});
